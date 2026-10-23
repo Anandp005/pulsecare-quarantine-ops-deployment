@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f9fc" />
+    <title>PulseCare | Quarantine Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark"><span></span><span></span><span></span></div>
+          <div><strong>pulse<span>care</span></strong><small>ward operations</small></div>
+        </div>
+        <div class="facility-switcher"><div class="facility-icon">✚</div><div><b>Northstar Isolation</b><small>Ward 03 · 74 beds</small></div><span>⌄</span></div>
+        <nav>
+          <p class="nav-label">Workspace</p>
+          <button class="nav-item active" data-view="overview"><span>◈</span> Overview <em>⌘ 1</em></button>
+          <button class="nav-item" data-view="patients"><span>♧</span> Patients <em>⌘ 2</em></button>
+          <button class="nav-item" data-view="rounds"><span>◷</span> Doctor rounds <em>⌘ 3</em></button>
+          <button class="nav-item" data-view="analytics"><span>◒</span> Analytics <em>⌘ 4</em></button>
+          <p class="nav-label">Manage</p>
+          <button class="nav-item" data-view="team"><span>♙</span> Care team</button>
+          <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+        </nav>
+        <div class="sidebar-bottom"><div class="support-card"><div class="pulse-dot"></div><div><b>All systems healthy</b><small>Last synced just now</small></div></div><div class="profile"><div class="avatar avatar-teal">AR</div><div><b>Ananya Rao</b><small>Head nurse · online</small></div><span>•••</span></div></div>
+      </aside>
+      <main class="main">
+        <header class="topbar"><button class="mobile-menu">☰</button><div class="breadcrumbs"><span>Northstar Isolation</span><b>/</b><strong id="breadcrumb">Overview</strong></div><div class="top-actions"><button class="icon-button" title="Notifications">♧<i></i></button><button class="help-button">?</button><div class="date-pill">23 Oct 2026 <span>⌄</span></div></div></header>
+        <div id="view-container"></div>
+      </main>
+    </div>
+    <div class="toast" id="toast"><span>✓</span><div><b id="toast-title">Saved</b><small id="toast-message">Your update was recorded.</small></div></div>
+    <div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="modal-close">×</button><div class="modal-kicker">NEW CLINICAL ENTRY</div><h2 id="modal-title">Record temperature</h2><p id="modal-subtitle">Add a reading for this patient.</p><form id="entry-form"><label>Patient<select id="patient-select"></select></label><div class="form-row"><label>Temperature <div class="input-with-unit"><input id="temperature" type="number" step="0.1" min="35" max="43" value="37.2" required /><span>°C</span></div></label><label>Time<input id="entry-time" type="time" value="09:30" required /></label></div><label>Clinical note <textarea id="clinical-note" rows="3" placeholder="Optional context for the care team..."></textarea></label><div class="form-actions"><button type="button" class="button secondary" id="cancel-entry">Cancel</button><button type="submit" class="button primary">Save entry <span>→</span></button></div></form></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
